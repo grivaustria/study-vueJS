@@ -2,6 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
+      name: '',
     };
   },
 
@@ -12,6 +13,10 @@ const app = Vue.createApp({
 
     reduce(num) {
       this.counter = this.counter - num;
+    },
+
+    setName(event, text){
+      this.name = text + ' ' + event.target.value;
     }
   }
 });
