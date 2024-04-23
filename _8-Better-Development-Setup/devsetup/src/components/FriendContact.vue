@@ -1,50 +1,46 @@
 <template>
-    <li>
-        <h2>{{ friend.name }}</h2>
-        <button @click="toggleDetails">{{ visibleDetails ? 'Hide' : 'Show' }} Details</button>
-        <ul v-if="visibleDetails">
-        <li><strong>Phone: </strong>{{ friend.phone }}</li>
-        <li><strong>Email: </strong>{{ friend.email }}</li>
+  <li>
+    <h2>{{ friend.name }}</h2>
+    <button @click="toggleDetails">
+      {{ visibleDetails ? "Hide" : "Show" }} Details
+    </button>
+    <ul v-if="visibleDetails">
+      <li><strong>Phone: </strong>{{ friend.phone }}</li>
+      <li><strong>Email: </strong>{{ friend.email }}</li>
     </ul>
-    </li>
-    
+  </li>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            visibleDetails: false,
-            friend: {
-                id: '01',
-                name: 'John Doe',
-                phone: '0912-345-6789',
-                email: 'jdoe@example.com',
-            },
-            
-        }
-    },
+  data() {
+    return {
+      visibleDetails: false,
+      friend: {
+        id: "01",
+        name: "John Doe",
+        phone: "0912-345-6789",
+        email: "jdoe@example.com",
+      },
+    };
+  },
 
-    methods: {
-        toggleDetails(){
-            this.visibleDetails = !this.visibleDetails;
-        }
-    }
-}
+  methods: {
+    toggleDetails() {
+      this.visibleDetails = !this.visibleDetails;
+    },
+  },
+};
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 * {
   box-sizing: border-box;
-}
-
-html {
-  font-family: 'Jost', sans-serif;
-}
-
-body {
+  font-family: "Jost", sans-serif;
   margin: 0;
 }
+
 
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -97,5 +93,4 @@ header {
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
-
 </style>
